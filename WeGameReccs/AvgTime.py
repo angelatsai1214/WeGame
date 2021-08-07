@@ -4,6 +4,7 @@ import json
 import time
 
 
+#TODO: Replace with async reqs to speed up fetching data
 
 BASE_URL = 'https://howlongtobeat.com/search_results?page='
 DATA = {
@@ -24,7 +25,6 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
 CONNECT_PAUSE = 5
 game_times = []
-
 
 def get_pg_num() -> int:
     r = requests.post(f'{BASE_URL}1', headers={'User-Agent':USER_AGENT}, data=DATA)
