@@ -11,7 +11,8 @@
   justify-content: center;
 }
 
-#sec {
+#sec,
+#devms {
   background-image: url(images/blur2.png);
   background-size: cover;
   background-position: 50% 0%;
