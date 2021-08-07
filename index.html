@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>WeGame</title>
-        <link rel="icon" type="image/png" href="/images/logo.png">
+        <link rel="icon" type="image/png" href="/images/icon.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -19,43 +19,51 @@
         <header id="header">
             <div class="text-justify" style="background-color:#0B0340; position: sticky;">
                 <nav class="navbar navbar-expand-lg navbar-dark" style="text-align: right;">
-                    <img src="images/logo.png" alt="WeGameLogo" id="logo" width="25%" class="d-inline-block align-text-top" style="margin-right:23rem;">                 
+                    <img src="images/logo.png" alt="WeGameLogo" id="logo" width="25%" class="d-inline-block align-text-top" style="margin-right:40vw;">                 
                     <button class="navbar-toggler me-4 border border-info" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon color-dark"></span>
                     </button>
                       <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html"><span class="navbar-text text-end text-white" style="font-size: 24px; font-weight: bold;">Home</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px;">About Us</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px;">Games</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px;">Game Companies</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html"><span class="navbar-text text-end" style="font-size: 24px; font-weight: bold; color:#F23869;">Home</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">About Us</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">Login</span></a></li>
+                            <!--<li class="nav-item"><a class="nav-link" href="#"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">Game Companies</span></a></li>-->
                         </ul>
                     </div>
                 </nav>
             </div>
         </header>
         
-        <main id="first">
-            <div style="margin:6rem 2rem 3rem 2rem;">
+        <main id="first" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200">
+            <div style="margin:6rem 2rem 3rem 2rem;" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
                 <h2 style="color: white; text-align: center">A platform that connects gamers and developers</h2>
-                <h2 style="color: white; text-align: center">Gamers - find new games and earn money!</h2>
-                <h2 style="color: white; text-align: center">Developers - advertise your new game and get feedback!</h2>
+                <h2 style="color: white; text-align: center"><span style="font-weight:bold">Gamers</span> - find new games and earn money!</h2>
+                <h2 style="color: white; text-align: center"><span style="font-weight:bold">Developers</span> - advertise your new game and get feedback!</h2>
             </div>
-            <button type="submit" id="button"><a href="#sec" style="text-decoration: none;">Get Started</a></button>
+            <a href="#sec" type="button" class="cta" style="text-decoration: none;">Get Started</a>
         </main>
         
-        
-        <main id="sec" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">
-            <div style="text-align: center;">
+
+        <main id="sec" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200">
+            <div style="text-align: center;" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
                 <h2 style="color: white;">Join our growing community right now!</h2>
                 <h3 style="color: white;">Are you a gamer or a game developer?</h3>
             </div>
+            <div style="margin-top:5rem;">
+                <a href="gamer1.html" type="button" class="cta" style="text-decoration: none; padding-left: 40px; padding-right: 40px;">Gamer</a>
+                <a href="dev1.html" type="button" class="cta" style="text-decoration: none;">Developer</a>
+            </div>
         </main>
 
-        
+        <footer style="background-color: #030226;">
+            <div class="text-center"><img src="images/logo.png" alt="logo" width=20%>
+                <h5 style="color:white; padding-bottom:5vh;">Copyright © 2021 WeGame. All rights reserved.</h5>
+            </div>
+        </footer>    
 
-            
-
-
+        <script>
+            AOS.init();
+          </script>
     </body>
 </html>
