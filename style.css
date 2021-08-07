@@ -1,11 +1,41 @@
-main {
-  background-image: url(images/blur.png);
+#first {
+  background-image: url(images/blur1.png);
   background-size: cover;
   background-position: 50% 0%;
+  margin: 0;
   width: 98.5vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#sec {
+  background-image: url(images/blur2.png);
+  background-size: cover;
+  background-position: 50% 0%;
+  margin: 0;
+  width: 98.5vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#button {
+  padding: 8px;
+  width: 15%;
+  border: solid #f23869;
+  background-color: #f23869;
+  color: white;
+  font-size: large;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: white;
+  color: black;
 }
