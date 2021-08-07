@@ -36,6 +36,7 @@
   font-size: large;
   border-radius: 50px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .cta:hover {

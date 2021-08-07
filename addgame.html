@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>WeGame</title>
+        <link rel="icon" type="image/png" href="/images/icon.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">   
+        <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </head>
+    <body style="background-image: linear-gradient(#440682,#0B0340);">
+        <header id="header">
+            <div class="text-justify" style="background-color:#0B0340; position: sticky; display: flex; justify-content:center;">
+                <img src="images/logo.png" alt="WeGameLogo" id="logo" width="25%">  
+            </div>
+        </header> 
+
+        <div class="text-center text-white mt-5">
+            <h2>Game Registration</h2>
+        </div>
+        <form>
+        <div class="row" style="margin: 5vh 20vw 5vh 20vw;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="cName" style="color:white;font-size:medium;">Company Name</label>
+                <input type="text" id="cName" name="cName" placeholder="Game Name" required class="form-control">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="gName" style="color:white;font-size:medium;">Game Name</label>
+                <input type="text" id="gName" name="gName" placeholder="Game Name" required class="form-control">
+            </div>
+        </div>   
+
+        <div class="row" style="margin: 5vh 20vw 3vh 20vw;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="gLink" style="color:white;font-size:medium;">Game Link</label>
+                <input type="url" id="gLink" name="gLink" placeholder="Game Link" required class="form-control">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="count" style="color:white; font-size:medium;">User Count</label>
+                <input type="number" id="count" name="count" placeholder="Current User Count" required class="form-control">
+            </div>
+        </div>
+
+        <div class="row" style="margin: 5vh 20vw 3vh 20vw;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="genres" style="color:white; font-size:medium;">Game Genres</label> <br>
+                <input list="genres" name="genres" required class="form-control">
+                <datalist id="genres">
+                  <option value="Fighting">
+                  <option value="Shooter">
+                  <option value="Music">
+                  <option value="Platform">
+                  <option value="Puzzle">
+                  <option value="Racing">
+                  <option value="Real Time Strategy (RTS)">
+                  <option value="Role-playing (RPG)">
+                  <option value="Simulator">
+                  <option value="Sport">
+                  <option value="Strategy">
+                  <option value="Turn-based strategy (TBS)">
+                  <option value="Tactical">
+                  <option value="Quiz/Trivia">
+                  <option value="Hack and slash/Beat 'em up">
+                  <option value="Pinball">
+                  <option value="Adventure">
+                  <option value="Arcade">
+                  <option value="Visual Novel">
+                  <option value="Indie">
+                  <option value="Card & Board Game">
+                  <option value="MOBA">
+                  <option value="Point-and-click">
+                </datalist>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="theme" style="color:white; font-size:medium;">Game Theme</label> <br>
+                <input list="theme" name="theme" required class="form-control">
+                <datalist id="theme">
+                  <option value="Thriller">
+                  <option value="Science fiction">
+                  <option value="Action">
+                  <option value="Horror">
+                  <option value="Survival">
+                  <option value="Fantasy">
+                  <option value="Historical">
+                  <option value="Stealth">
+                  <option value="Comedy">
+                  <option value="Business">
+                  <option value="Drama">
+                  <option value="Non-fiction">
+                  <option value="Kids">
+                  <option value="Sandbox">
+                  <option value="Open world">
+                  <option value="Warfare">
+                  <option value="4X (explore, expand, exploit, and exterminate)">
+                  <option value="Educational">
+                  <option value="Mystery">
+                  <option value="Party">
+                  <option value="Romance">
+                  <option value="Erotic">
+                </datalist>
+            </div>
+        </div>
+
+        <div class="row" style="margin: 5vh 20vw 3vh 20vw;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="mode" style="color:white; font-size:medium;">Game Mode</label> <br>
+                <input list="mode" name="mode" required class="form-control">
+                <datalist id="mode">
+                  <option value="Singleplayer">
+                  <option value="Multiplayer">
+                  <option value="Co-op">
+                  <option value="Split-screen">
+                  <option value="Massively Multiplayer Online (MMO)">
+                  <option value="Battle Royale">
+                </datalist>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="perspective" style="color:white; font-size:medium;">Player Perspective</label> <br>
+                <input list="perspective" name="perspective" required class="form-control">
+                <datalist id="perspective">
+                  <option value="First Person">
+                  <option value="Third Person">
+                  <option value="Bird View / Isometric">
+                  <option value="Text">
+                  <option value="Side View">
+                  <option value="VR">
+                  <option value="Auditory">                     
+                </datalist>
+            </div>
+        </div>
+
+        <div class="row" style="margin: 5vh 20vw 3vh 20vw;">
+            <div class="col-12">
+                <label for="gamedes" style="color:white;font-size:medium;">Game Description</label>
+                <input type="text" id="gamedes" name="gamedes" placeholder="Game Description" required class="form-control">
+            </div>
+        </div>
+
+        <div class="row" style="margin: 0vh 30vw 3vh 20vw;">
+            <div class="text-center text-white" style="margin: 5vh 20vw 3vh 20vw;">
+                <label class="text-center">Add Images of Your Game: </label>
+                <input type="file" assets='image/*' name='gameimg' required multiple>
+            </div>
+        </div>
+
+        <div class="text-center my-3">
+            <a href="devmain1.html" type="button" class="cta" style="text-decoration: none;">Back</a>
+            <a href="finishgame.html" type="button" class="cta" style="text-decoration: none;">Finish</a>
+        </div>
+    </form>
+        <footer style="background-color: #0B0340;">
+            <div class="text-center"><img src="images/logo.png" alt="logo" width=20%>
+                <h5 style="color:white; padding-bottom:5vh;">Copyright © 2021 WeGame. All rights reserved.</h5>
+            </div>
+        </footer> 
+    </body>
+</html>

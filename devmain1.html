@@ -31,10 +31,32 @@
                     </nav>
                 </div>
             </header>
-            <main id="devms">
-            <div class="container text-center text-white my-5">
-                <h3>Welcome Developer.</h3> 
-                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add Your Game</a>
+        <main id="devms">
+            <div class="container text-center text-white my-5"  data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
+                <h2>Welcome Developer!</h2> 
+                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add My Game</a> <br>
+                <a href="#task" type="button" class="cta" style="text-decoration: none;">View My Tasks</a>
+            </div>
+        </main>
+
+        <main id="task" width="90%" class="text-center">
+            <div class="container text-center text-white mt-5">
+                <h2>Task Progress</h2>
+                <table>
+                    <tr>
+                        <th>Tasks</th>
+                        <th>Progress</th>
+                    </tr>
+                    <tr>
+                        <td>Reach 1000 players</td>
+                        <td>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                              70%
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </main>
 
@@ -43,5 +65,8 @@
                 <h5 style="color:white; padding-bottom:5vh;">Copyright © 2021 WeGame. All rights reserved.</h5>
             </div>
         </footer> 
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
