@@ -15,28 +15,31 @@
     <body style="background-color: #440682">
             <header id="header">
                 <div class="text-justify container-fluid sticky-top" style="background-image:linear-gradient(#440682, #0B0340); display:flex; justify-content:center;">
-                    <img src="images/logo.png" alt="WeGameLogo" id="logo" width="300vw" class="d-inline-block align-text-top">                 
-                    <a href='account.html' style="position:absolute; right:5vw; top: 7vh;"><img src='{{avatar}}'></a></li>    
+                    <a href="gamermain1.html" style="display: in-line block; float:left;"><img src="images/logo.png" alt="WeGameLogo" id="logo" width="300vw"></a>
+                   <!--<a href='account.html' style="position:absolute; right:5vw; top: 7vh;"><img src='{{avatar}}'></a></li>   --> 
                 </div>
             </header>
         <main id="devms">
             <div class="container text-center text-white my-5" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
-                <h2>Great to see you Gamer!</h2> 
-                <a href="#rec" type="button" class="cta" style="text-decoration: none;">Get Game Recommendation</a> <br>
-                <a href="mygame.html" type="button" class="cta" style="text-decoration: none;">Explore Games</a>
-                <a href="#task" type="button" class="cta" style="text-decoration: none;">View Gaming History</a>
+                <h1><strong>Great to see you!</strong></h1> 
+                <a href="#here" type="button" class="cta" style="text-decoration: none;">Get Game Recommendation</a> <br>
+                <a href="games.html" type="button" class="cta" style="text-decoration: none;">Explore Games</a>
+                <a href="history.html" type="button" class="cta" style="text-decoration: none;">View Gaming History</a>
             </div>
         </main>
 
-        <div id="rec">
+        <div id="here" class="text-white text-center" style="margin-top: 5vw; padding-top: 5vw"  data-aos-easing="ease" data-aos-delay="250">
+            <h2>Your Game Recommendations</h2>  
+        </div>
 
+        <div id="rec">
         </div>
 
         <script>
             AOS.init();
         </script>
     </body>
-    <script src="games.js"></script>
+    <script src="rec.js"></script>
 
 
 </html>

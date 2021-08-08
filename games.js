@@ -6,16 +6,22 @@ const gameData = [
         company: "RGDX",
         themes: ["Action"], 
         player_perspective: ["Split Screen"],
-        iamge: "https://media.comicbook.com/2017/12/pubg-xbox-one-vs-xbox-one-x-1066041-1280x0.jpg"
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
+        image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#1",
+        score: "98%"
     }, 
     {
-        game_modes: ["Single player", "Multiplayer"], 
-        genres: ["Fighting"], 
-        name: "SOME game", 
-        company: "LionLin",
-        themes: ["Thriller", "Kids"], 
-        player_perspective: ["First Person"],
-        image: "https://wallpaperaccess.com/full/2621589.jpg"
+        game_modes: ["Co-operative", "Multiplayer"],
+        genres: ["Racing"],
+        name: "Race It!",
+        themes: ["Thriller"],
+        player_perspective: ["Side View"],
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
+        company:"MeGames Productions",
+        image:"https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#2",
+        score: "97%"
     },
     {
         game_modes: ["Single player", "Multiplayer"], 
@@ -24,65 +30,82 @@ const gameData = [
         company: "Superion",
         themes: ["Action", "Survival"], 
         player_perspective: ["First Person"],
-        image: "https://wallpaperaccess.com/full/2621589.jpg"
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
+        image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#3",
+        score: "95%"
     },
     {
         game_modes: ["Single player", "Multiplayer"], 
-        genres: ["Platform", "Role-playing (RPG)"], 
+        genres: ["Role-playing (RPG)"], 
         name: "HiStoryVR", 
         themes: ["Historical", "Non-fiction"], 
         player_perspective: ["VR"],
-        game_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
         company: "Bezene",
-        image: "https://wallpaperaccess.com/full/2621589.jpg"
+        image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#4",
+        score: "94%"
     },
     {
-        game_modes: ["Massively Multiplayer Online (MMO)", "Multiplayer"],
+        game_modes: ["Massively Multiplayer Online (MMO)"],
         genres: ["Tactical", "Shooter"],
-        name: "Not your average mmo",
-        themes: ["Survival", "Mystery", "Open world"],
+        name: "MMOMundo",
+        themes: ["Survival", "Mystery"],
         player_perspective: ["First Person", "Third Person"],
-        game_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
         company:"AYMOY",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Black_photo.jpg"
+        image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#5",
+        score: "92%"
     },
     {
         game_modes: ["Virtual Reality"],
         genres: ["Puzzle"],
-        name: "Can You Solve It?",
+        name: "Solver",
         themes: ["Educational", "Mystery"],
         player_perspective: ["First Person"],
-        game_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
         company:"MeGames Productions",
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6c/Black_photo.jpg"},
+        image:"https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#6",
+        score: "92%"
+    },
     {
-        game_modes: ["Co-operative", "Multiplayer"],
-        genres: ["Racing"],
-        name: "Race It!",
-        themes: ["Thriller"],
-        player_perspective: ["Side View"],
-        game_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        company:"MeGames Productions",
-        image:"https://upload.wikimedia.org/wikipedia/commons/6/6c/Black_photo.jpg"
+        game_modes: ["Single player", "Multiplayer"], 
+        genres: ["Fighting"], 
+        name: "SOME", 
+        company: "LionLin",
+        themes: ["Thriller", "Kids"], 
+        player_perspective: ["First Person"],
+        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
+        image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
+        rank: "#7",
+        score: "90%"
     }
 ]
 
 function gameTemplate(game){
     return `
     <div class="rec">
-        <h3><strong>${game.name}</strong> from ${game.company}</h3>
-        <img src="game.image">
-        <h4>Game Mode: ${game.game_modes}</h4>
-        <h4>Player Perspective: ${game.player_perspective}</h4>
-        <h4>Generes/Themes: ${game.genres}/ ${game.themes}</h4>
-        <h4>${game_description}
+        <div class="left">
+            <h3 class="namename">${game.rank} <strong>${game.name}</strong> from ${game.company}</h3>
+            <img src="${game.image}" class="cs">
+        </div>
+        <div class="right">
+            <h4 class="cri"><strong>Average Score from Gamers:</strong> ${game.score}</h4>
+            <h4 class="cri"><strong>Game Mode:</strong> ${game.game_modes}</h4>
+            <h4 class="cri"><strong>Player Perspective:</strong> ${game.player_perspective}</h4>
+            <h4 class="cri"><strong>Generes/Themes: </strong>${game.genres}/ ${game.themes}</h4>
+            <h3 class="cri">${game.game_description}</h3>
+            <input type="button" class="cta" value="View Reviews">
+            <input type="button" class="cta" value="Play Game">
+        </div>
     </div>
     `
 }
 
-document.getElementById("rec").innerHTML = `
-    <h2>Your Game Recommendations</h2>    
+document.getElementById("exp").innerHTML = `  
     ${gameData.map(gameTemplate).join('')}
 `
 
-document.getElementById("try").innerHTML = `<h1>Hello</h1>`
