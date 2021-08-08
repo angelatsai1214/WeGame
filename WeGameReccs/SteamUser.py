@@ -76,7 +76,7 @@ def calculateAvgTimeFromDF(avg_time_df:DataFrame) -> Dict[str, float]:
     """returns: Average of all avaliable times that arent Nan"""
     avg_time_dict = {}
     times = [col for col in avg_time_df.columns if "time" in col]
-    print("Time Columnns:", times)
+    #print("Time Columnns:", times)
     for _, row in avg_time_df.iterrows():
         curr_row_times = []
         #print("Now on", row["name"])
@@ -126,8 +126,8 @@ def sort_based_on_activity(avg_time_file:str, games_activity: Dict[str, int]) ->
             print(f"Key {game_name} not found in avg_time_dict")
             games_priority[(game_name, user_time)] = 0
 
-    print("Unsorted games priority")
-    print(games_priority)
+    #print("Unsorted games priority")
+    #print(games_priority)
 
     #sort all positives values first, big to small, and then negative values
     #small to big
@@ -142,8 +142,8 @@ def sort_based_on_activity(avg_time_file:str, games_activity: Dict[str, int]) ->
     positives_sorted = sorted(positives_sorted, key=lambda item: item[1], reverse=True)
     negatives_sorted = sorted(negatives_sorted, key=lambda item: item[1],  reverse=True)
 
-    print("Sorted dict")
-    print(dict(positives_sorted + negatives_sorted))
+    #print("Sorted dict")
+    #print(dict(positives_sorted + negatives_sorted))
     return dict(positives_sorted + negatives_sorted)
 
 

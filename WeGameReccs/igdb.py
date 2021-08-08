@@ -1,5 +1,6 @@
 """This file is the command prompt app for downloading all the data from a specific endpoint
-from the igdb api. This data is downloaded as files in order to be usef t=for the recommendation engine"""
+from the igdb api. This data is downloaded as files in order to be usef t=for the recommendation engine
+It was used only to get data, and will not be used in production"""
 
 import json
 import requests
