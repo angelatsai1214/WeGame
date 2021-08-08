@@ -85,4 +85,4 @@ document.getElementById("rec").innerHTML = `
     ${gameData.map(gameTemplate).join('')}
 `
 
-document.getElementById("try").innerHTML = "Hi"
+document.getElementById("try").innerHTML = `<h1>Hello</h1>`
