@@ -45,3 +45,16 @@
   background-color: white;
   color: black;
 }
+
+#st {
+  background-color: #f23869;
+  background-size: cover;
+  background-position: 50% 0%;
+  margin: 0;
+  width: 98.5vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
