@@ -1,99 +1,90 @@
-# Take in the user's list of games, in the order of their prefrence, from SteamUser file
-# For each of these games, compute the most similar game(s) to it, and add to a list
-# If the reccomendation is duplicate, choose the next one, until none are left. In that case 
-# skip it
-
-# For now, since there arent alot of games on the platform, only reccomend one game per 
-# each game in the library, later change this to be dependatn on user settings
-
-#How to make recommendations?
-#Our platform and igdb have the same criteria, so it will be like reccomending from 
-#the same dataset
 import json
 import pandas as pd
 from typing import List, Dict
 from copy import deepcopy
+import os
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-#class Game():
-#    """An object representing a game in the database.
-#    Must have a name, theme, genre, game mode, and player perspective"""
-#    def __init__(self, name:str, themes:List, genres:List, game_modes:List, povs:List):
-#        self.name = name
-#        self.themes = themes
-#        self.genres = genres
-#        self.game_modes = game_modes
-#        self.povs = povs
 
 
+GAME_DATA_PATH = "\dataClean\games02.json"
+WEGAME_GAMES_DATA_PATH = "\dataClean\SampleWeGameDevs02.json"
 USER_DATA_PATH = "\dataClean\SampleSteamUser.json"
-WEGAME_GAMES_DATA_PATH = "\dataClean\SampleWeGameDevs"
-OUTPUT_RECCOMMENDATIOS_FILE = "\dataClean\SampleReccs.json"
-GAME_DATA_PATH = "\dataClean\games01.json"
-LIMIT = 20
+#OUTPUT_RECCOMMENDATIOS_FILE = "\dataClean\SampleReccs.json"
 
-def save_data(reccs:Dict):
-    with open(OUTPUT_RECCOMMENDATIOS_FILE, "w") as file:
-        json.dump(reccs, file)
+
+#def save_data(reccs:Dict):
+#    with open(OUTPUT_RECCOMMENDATIOS_FILE, "w") as file:
+#        json.dump(reccs, file)
 
 
 def find_game_info_in_db(game_name:str, db:pd.DataFrame)->pd.Series:
     result = db.index[db["name"] == game_name].tolist()
-    if len(result) == 1:
-        return result.iloc[result[0]]
-    elif len(result) > 1:
-        raise Exception(f"There is a conflict for the values of the game {game_name}, there are two games with the same name")
+    try:
+        return db.iloc[result[0]]
+    except IndexError:
+        return None
 
 
 def make_soup(x):
-    genres = ' '.join(x["genres"])
-    game_modes = ' '.join(x["game_modes"])
-    themes = ' '.join(x["themes"])
-    player_perspectives = ' '.join(x["player_perspectives"])
-    return ' '.join(x["name"], genres, game_modes, themes, player_perspectives)
+    final_str = ""
+    if x['genres'] is not None:
+        final_str = final_str + ' '.join(str(i) for i in x['genres']) + " "
+    if x['game_modes'] is not None:
+        final_str = final_str + ' '.join(str(i) for i in x['game_modes']) + " "
+    if x['player_perspectives'] is not None:
+        final_str = final_str + ' '.join(str(i) for i in x['player_perspectives']) + " "
+    if x['themes'] is not None:
+        final_str = final_str + ' '.join(str(i) for i in x['themes']) + " "
+
+    return final_str.strip()
 
 
 def preprocess_data(external_games_data_file, internal_games_data_file):
     """Process data and make it ready for use
-    @games_data_file: The file path for the file that stores all the data on
+    @external_games_data_file: The file path for the file that stores all the data on
     the video games from external sources like steam or playstation store.
     Has many data fields and is fetched from igdb's API, using igdb.py
-    @user_data_file: The file path for the file that stores all the data on users gaming
-    history. Currently only Steam."""
-    outgames = pd.read_json(external_games_data_file)
-    wegame = pd.read_json(internal_games_data_file)
+    @internal_games_data_file: The file path for the file that stores all the data on games
+    submitted by indie devs of our platform"""
+    outgames = pd.read_json(f"{os.getcwd()}{external_games_data_file}")
+    wegame = pd.read_json(f"{os.getcwd()}{internal_games_data_file}")
     
     #Deepcopy the subset of dfs that are important and continue working with those
     fields = ["name", "game_modes", "player_perspectives", "genres", "themes"]
     outgames_c = deepcopy(outgames[fields])
     wegame_c = deepcopy(wegame[fields])
+    outgames_c = outgames_c[:40000]
+    #print(outgames_c.shape)
     
     #Add a weGame column for confirming the source
-    outgames_c["WeGame"] = [True for _ in range(len(outgames_c))]
+    outgames_c["WeGame"] = [False for _ in range(len(outgames_c))]
     wegame_c["WeGame"] = [True for _ in range(len(wegame_c))]
 
     #merge the external and WeGame datasets
-    dataset = outgames_c.concat(wegame_c)
+    dataset = pd.concat([outgames_c, wegame_c])
+    #print(dataset.info())
 
     #make soup
     # Add soup a column
-    dataset["soup"] = dataset.apply(make_soup)
-    
+    dataset['soup'] = dataset.apply(make_soup, axis=1)
+
     #return new dataset
     return dataset
 
 
 def get_games_user_likes(games, user_data_file):
-    game_objs = []
-    with open(user_data_file) as f:
+    game_names = []
+    with open(f"{os.getcwd()}{user_data_file}") as f:
         user = json.load(f)
     
     for game_name in user[0].keys():
-        game_objs.append(find_game_info_in_db(game_name, games))
+        r = find_game_info_in_db(game_name, games)
+        if r is not None:
+            game_names.append(r)
         #game_obj = Game(game_row["name"], game_row["themes"], game_row["genres"], game_row["game_modes"], game_row["povs"])
-    return game_objs
-
+    return game_names
 
 
 def get_reccommendations(data, name):
@@ -101,8 +92,9 @@ def get_reccommendations(data, name):
     count_matrix = count.fit_transform(data['soup'])
     cosine_sim = cosine_similarity(count_matrix, count_matrix)
     
+    data = data.reset_index()
     indices = pd.Series(data.index, index=data['name']).drop_duplicates()
-    print(indices[:10])
+    #print(indices[:10])
     
     # Get the index of the game that matches the name
     idx = indices[name]
@@ -113,23 +105,23 @@ def get_reccommendations(data, name):
     # Sort the games based on the similarity scores
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
 
-    # Get the game indices for top games on our platform.
+    # Get the game indices for top matches on our platform.
     best_matches = []
     game_indices = [i[0] for i in sim_scores]
     for index in game_indices:
-        if data.iloc[index]["WeGame"]:
+        if data.iloc[index]["WeGame"] == True:
             best_matches.append(data.iloc[index]["name"])
 
-    if len(best_matches) <= 20:
-        return best_matches
-    else:
-        return best_matches[:20]
+    return best_matches
 
 
 """The series of reccomendations in the order to be displayed to user.
 It is an array of Series"""
 final_reccs = []
 games = preprocess_data(GAME_DATA_PATH, WEGAME_GAMES_DATA_PATH)
+#wegame_data = deepcopy(games[games["WeGame"] == True])
+#external_data = deepcopy(games[games["WeGame"] == False])
+
 for game in get_games_user_likes(games, USER_DATA_PATH):
     reccs = get_reccommendations(games, game["name"])
     for i, recc in enumerate(reccs):
@@ -137,4 +129,5 @@ for game in get_games_user_likes(games, USER_DATA_PATH):
             final_reccs.append(recc)
             break
 
+print("Your current reccomendation(s) based on your steam account and our current data")
 print(final_reccs)
