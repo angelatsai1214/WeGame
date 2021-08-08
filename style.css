@@ -77,10 +77,56 @@
   justify-content: center;
 }
 
+/*Games*/
+
 .rec {
   display: flex;
   justify-content: space-around;
+  margin: 5vw;
   background-color: #fff;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  padding: 5vh;
+  border-radius: 10px;
+}
+
+.rec:hover {
+  box-shadow: 5px 5px 5px #f23869;
+}
+
+.namename {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.cs {
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: space-around;
+}
+
+.right {
+  width: 65%;
+  padding: 3vh;
+}
+
+.cri {
+  font-size: 1.5rem;
+}
+
+/*Account Page */
+
+.acc {
+  display: flex;
+  justify-content: space-around;
+  margin: 2vh;
+  border-radius: 10px;
+}
+
+.personal {
+  padding: 5vh;
 }
