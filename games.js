@@ -84,3 +84,5 @@ document.getElementById("rec").innerHTML = `
     <h2>Your Game Recommendations</h2>    
     ${gameData.map(gameTemplate).join('')}
 `
+
+document.getElementById("try").innerHTML = "Hi"
