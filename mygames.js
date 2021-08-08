@@ -1,27 +1,21 @@
 const gameData = [
     {
-        game_modes: ["Co-operative", "Multiplayer"],
-        genres: ["Racing"],
         name: "Race It!",
-        themes: ["Thriller"],
-        player_perspective: ["Side View"],
-        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
         company:"MeGames Productions",
         image:"https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
         rank: "#2",
-        score: "97%"
+        score: "97%",
+        users: 14,
+        bugs:2
     },
     {
-        game_modes: ["Virtual Reality"],
-        genres: ["Puzzle"],
         name: "Solver",
-        themes: ["Educational", "Mystery"],
-        player_perspective: ["First Person"],
-        game_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.",
         company:"MeGames Productions",
         image:"https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg?size=626&ext=jpg",
         rank: "#6",
-        score: "92%"
+        score: "92%",
+        users: 14,
+        bugs:8
     }
 ]
 
@@ -34,12 +28,10 @@ function gameTemplate(game){
         </div>
         <div class="right">
             <h4 class="cri"><strong>Average Score from Gamers:</strong> ${game.score}</h4>
-            <h4 class="cri"><strong>Rank:</strong> ${game.rank}</h4>
-            <h4 class="cri"><strong>Player Perspective:</strong> ${game.player_perspective}</h4>
-            <h4 class="cri"><strong>Generes/Themes: </strong>${game.genres}/ ${game.themes}</h4>
-            <h3 class="cri">${game.game_description}</h3>
-            <input type="button" class="cta" value="View Reviews">
-            <input type="button" class="cta" value="Play Game">
+            <h4 class="cri"><strong>User Count:</strong> ${game.users}</h4>
+            <h4 class="cri"><strong>Ranking:</strong> ${game.rank}</h4>
+            <h4 class="cri"><strong>Bug Reports:</strong> ${game.bugs}</h4>
+            <input type="button" class="cta" value="View All Reviews">
         </div>
     </div>
     `

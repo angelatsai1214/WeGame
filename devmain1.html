@@ -13,17 +13,26 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </head>
     <body style="background-color: #440682">
-            <header id="header">
-                <div class="text-justify container-fluid sticky-top" style="background-image:linear-gradient(#440682, #0B0340); display:flex; justify-content:center;">
-                    <a href="devmain1.html" style="display: in-line block; float:left;"><img src="images/logo.png" alt="WeGameLogo" id="logo" width="300vw"></a>
-                    <a href='account.html' style="position:absolute; right:5vw; top: 7vh;"><img src='{{avatar}}'></a></li>    
+      <header id="header">
+        <div class="text-justify container-fluid" style="background-image:linear-gradient(#440682, #0B0340);">
+            <nav class="navbar navbar-expand-lg navbar-dark " style="text-align: right;">
+                <a href="gamermain1.html" style="display: in-line block; float:left;"><img src="images/logo.png" alt="WeGameLogo" id="logo" width="300vw"></a>
+                <button class="navbar-toggler me-4 border border-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon color-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">                            <ul class="navbar-nav ms-auto me-3">
+                        <li class="nav-item"><a class="nav-link" href="devmain1.html"><span class="navbar-text text-end" style="font-size: 24px; font-weight: bold;color:#F23869;">Home</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="mygame.html"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">My Games</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="accountd.html"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">Account</span></a></li>
+                    </ul>
                 </div>
-            </header>
+            </nav>
+        </div>
+    </header>
         <main id="devms">
             <div class="container text-center text-white my-5" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
                 <h2>Welcome Developer!</h2> 
-                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add New Game</a> <br>
-                <a href="mygame.html" type="button" class="cta" style="text-decoration: none;">View My Games</a>
+                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add New Game</a> 
                 <a href="#task" type="button" class="cta" style="text-decoration: none;">View My Tasks</a>
             </div>
         </main>
