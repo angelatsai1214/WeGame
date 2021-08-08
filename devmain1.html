@@ -14,27 +14,16 @@
     </head>
     <body style="background-color: #440682">
             <header id="header">
-                <div class="text-justify container-fluid" style="background-color:#0B0340; position: sticky;">
-                    <nav class="navbar navbar-expand-lg navbar-dark" style="text-align: right;">
-                        <img src="images/logo.png" alt="WeGameLogo" id="logo" width="25%" class="d-inline-block align-text-top" style="margin-right:35vw;">                 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon color-dark"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href=""><span class="navbar-text text-end" style="font-size: 24px; font-weight: bold; color:#F23869;">Home</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="mycompany.html"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">My Company</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="mygame.html"><span class="navbar-text text-end text-white" style="font-size: 24px; padding-left: 12px;">My Game</span></a></li>
-                                <li class="nav-item"><a href='account' style="position:absolute; right:2vw;"><img src='{{avatar}}'></a></li>
-                            </ul>
-                        </div>
-                    </nav>
+                <div class="text-justify container-fluid sticky-top" style="background-image:linear-gradient(#440682, #0B0340); display:flex; justify-content:center;">
+                    <img src="images/logo.png" alt="WeGameLogo" id="logo" width="300vw" class="d-inline-block align-text-top">                 
+                    <a href='account.html' style="position:absolute; right:5vw; top: 7vh;"><img src='{{avatar}}'></a></li>    
                 </div>
             </header>
         <main id="devms">
-            <div class="container text-center text-white my-5"  data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
+            <div class="container text-center text-white my-5" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
                 <h2>Welcome Developer!</h2> 
-                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add My Game</a> <br>
+                <a href="addgame.html" type="button" class="cta" style="text-decoration: none;">Add New Game</a> <br>
+                <a href="#task" type="button" class="cta" style="text-decoration: none;">View My Games</a>
                 <a href="#task" type="button" class="cta" style="text-decoration: none;">View My Tasks</a>
             </div>
         </main>
