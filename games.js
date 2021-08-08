@@ -72,17 +72,15 @@ function gameTemplate(game){
     <div class="rec">
         <h3><strong>${game.name}</strong> from ${game.company}</h3>
         <img src="game.image">
-
+        <h4>Game Mode: ${game.game_modes}</h4>
+        <h4>Player Perspective: ${game.player_perspective}</h4>
+        <h4>Generes/Themes: ${game.genres}/ ${game.themes}</h4>
+        <h4>${game_description}
     </div>
     `
 }
-/*
-document.getElementById("try").innerHTML = `
+
+document.getElementById("rec").innerHTML = `
     <h2>Your Game Recommendations</h2>    
     ${gameData.map(gameTemplate).join('')}
 `
-*/
-
-
-//i'm trying this, the try id is in the account.html page
-document.getElementById("try").innerHTML = "Hello"
