@@ -89,7 +89,8 @@
   border-radius: 10px;
 }
 
-.rec:hover {
+.rec:hover,
+.personal:hover {
   box-shadow: 5px 5px 5px #f23869;
 }
 
@@ -124,9 +125,13 @@
   display: flex;
   justify-content: space-around;
   margin: 2vh;
-  border-radius: 10px;
+  padding: 2vh 0 2vh 0;
 }
 
 .personal {
+  margin: 3vh;
   padding: 5vh;
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
 }
