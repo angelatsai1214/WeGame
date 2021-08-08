@@ -12,7 +12,7 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </head>
-    <body style="background-image: linear-gradient(#440682,#0B0340);">
+    <body style="background-color: #440682">
             <header id="header">
                 <div class="text-justify container-fluid" style="background-color:#0B0340; position: sticky;">
                     <nav class="navbar navbar-expand-lg navbar-dark" style="text-align: right;">
@@ -39,24 +39,67 @@
             </div>
         </main>
 
-        <main id="task" width="90%" class="text-center">
-            <div class="container text-center text-white mt-5">
-                <h2>Task Progress</h2>
-                <table>
-                    <tr>
-                        <th>Tasks</th>
-                        <th>Progress</th>
-                    </tr>
-                    <tr>
-                        <td>Reach 1000 players</td>
-                        <td>
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                              70%
+        <main id="task" class="text-center" style="background-color:#3621BF">
+            <div class="container text-center text-white mt-5"  data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200">
+                <h1 class="pt-5" style="color:#F23869">Task Progress</h1>
+
+                <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <h3>Tasks</h3>
+                      </div>
+                      <div class="col">
+                        <h3>Progress</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                        <h4>Register 5 Games</h4>
+                      </div>
+                      <div class="col">
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">2 Games</div>                            
+                        </div>
+                    </div>
+                </div> 
+                  <div class="row" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="250">
+                    <div class="col">
+                        <h4>Reach 1000 Players</h4>
+                      </div>
+                      <div class="col">
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">715 Players</div>
+                        </div>
+                      </div>
+                    </div>   
+
+                  <div class="row" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">
+                    <div class="col">
+                        <h4>Reach 500 Reviews</h4>
+                      </div>
+                      <div class="col">
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">248 Reviews</div>                            
+                        </div>
+                      </div>
+                    </div>                     
+
+                    <div class="row" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="350">
+                        <div class="col">
+                            <h4>Reach 100 Likes</h4>
+                          </div>
+                          <div class="col">
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 78%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">78 Likes</div>                            
                             </div>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    </div>  
+                <div class="my-5 pb-5" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">
+                    <h3>Great job, keep it up!</h3>
+                </div>
+                    
             </div>
         </main>
 
