@@ -19,3 +19,5 @@ trophy data for games to predict how much a user likes a partiular game. When ou
 of indie developers grows on our platform, we can introduce collacrative filtering to the recommendation engine as well.
 * We also started development for registeration pages. Some of the scripts use sql express and sql managament studia, and some write to files. These are only for prototyping. Once we launch the website, we will have more sophisticated security measures for registeration.
 
+** Note 1: The scripts have only been tested on windwos. We recommend running them on windows as well**
+** Note 2: Running the recommendation file requires lots of memory :)**
