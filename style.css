@@ -76,3 +76,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.rec {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
